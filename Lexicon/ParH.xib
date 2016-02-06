@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="273"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@COFFEE_SHOP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcf-ef-fHH">
+                    <rect key="frame" x="125" y="35" width="124" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coffee_shop" translatesAutoresizingMaskIntoConstraints="NO" id="arL-hy-fW2" customClass="SpringImageView" customModule="Spring">
+                    <rect key="frame" x="131" y="80" width="113" height="113"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="113" id="7dW-sz-MMA"/>
+                        <constraint firstAttribute="width" constant="113" id="tLv-DX-5Zh"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                            <real key="value" value="0.29999999999999999"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="force">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeInSine"/>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кофейня" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggr-9n-6dS">
+                    <rect key="frame" x="138" y="208" width="99" height="29"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                    <color key="textColor" red="0.32156862749999998" green="0.71764705880000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[kofeynya]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xkg-wf-ujn">
+                    <rect key="frame" x="155" y="238" width="64" height="17"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <color key="textColor" red="0.32156862749999998" green="0.71764705880000002" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.035294117649999998" green="0.10980392160000001" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="xkg-wf-ujn" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3G1-KZ-YLN"/>
+                <constraint firstItem="pcf-ef-fHH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="8dN-jo-rsY"/>
+                <constraint firstItem="ggr-9n-6dS" firstAttribute="top" secondItem="arL-hy-fW2" secondAttribute="bottom" constant="15" id="9Y8-gu-5Gw"/>
+                <constraint firstItem="arL-hy-fW2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="COX-Tg-Zbb"/>
+                <constraint firstItem="ggr-9n-6dS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="N3b-fF-FBF"/>
+                <constraint firstItem="xkg-wf-ujn" firstAttribute="top" secondItem="ggr-9n-6dS" secondAttribute="bottom" constant="1" id="T3E-2O-gIy"/>
+                <constraint firstItem="pcf-ef-fHH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="fbO-jz-hl5"/>
+                <constraint firstItem="arL-hy-fW2" firstAttribute="top" secondItem="pcf-ef-fHH" secondAttribute="bottom" constant="25" id="tua-Q3-E0c"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="227.5" y="162"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coffee_shop" width="115" height="115"/>
+    </resources>
+</document>
