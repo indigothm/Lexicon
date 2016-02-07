@@ -11,7 +11,6 @@
 		3FC6D88E1C6685E100471456 /* TabBarCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6D88D1C6685E100471456 /* TabBarCustomViewController.swift */; };
 		3FC6D8901C668BA300471456 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6D88F1C668BA300471456 /* HistoryViewController.swift */; };
 		3FD726861C663A2300AA4CB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD726851C663A2300AA4CB1 /* AppDelegate.swift */; };
-		3FD7268A1C663A2300AA4CB1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD726891C663A2300AA4CB1 /* SecondViewController.swift */; };
 		3FD7268D1C663A2300AA4CB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7268B1C663A2300AA4CB1 /* Main.storyboard */; };
 		3FD7268F1C663A2300AA4CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7268E1C663A2300AA4CB1 /* Assets.xcassets */; };
 		3FD726921C663A2300AA4CB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FD726901C663A2300AA4CB1 /* LaunchScreen.storyboard */; };
@@ -19,9 +18,12 @@
 		3FD7269E1C66492500AA4CB1 /* PhraseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD7269D1C66492500AA4CB1 /* PhraseTableViewCell.swift */; };
 		3FE01D0D1C6654F70036CB08 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE01D0C1C6654F70036CB08 /* UIImage+ImageEffects.m */; };
 		3FE01D0F1C66581F0036CB08 /* ParH.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE01D0E1C66581F0036CB08 /* ParH.xib */; };
-		3FE9B1A01C66A79900A46EE8 /* SSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B19F1C66A79900A46EE8 /* SSView.swift */; };
 		3FE9B1A61C66AE7E00A46EE8 /* SKSplashIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1A31C66AE7E00A46EE8 /* SKSplashIcon.m */; };
 		3FE9B1A71C66AE7E00A46EE8 /* SKSplashView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1A51C66AE7E00A46EE8 /* SKSplashView.m */; };
+		3FE9B1A91C66B26400A46EE8 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1A81C66B26400A46EE8 /* ProgressViewController.swift */; };
+		3FE9B1AB1C66C26D00A46EE8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1AA1C66C26D00A46EE8 /* HeaderView.swift */; };
+		3FE9B1B51C66CA6C00A46EE8 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */; };
+		3FE9B1B71C66DD7400A46EE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1B61C66DD7400A46EE8 /* DetailViewController.swift */; };
 		F35C009DB54B33F5B21C4C7A /* Pods_Lexicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DD05BAF777407A367B8452 /* Pods_Lexicon.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,7 +37,6 @@
 		3FC6D88F1C668BA300471456 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		3FD726821C663A2300AA4CB1 /* Lexicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lexicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FD726851C663A2300AA4CB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FD726891C663A2300AA4CB1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3FD7268C1C663A2300AA4CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3FD7268E1C663A2300AA4CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FD726911C663A2300AA4CB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,11 +46,14 @@
 		3FE01D0B1C6654F70036CB08 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		3FE01D0C1C6654F70036CB08 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		3FE01D0E1C66581F0036CB08 /* ParH.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParH.xib; sourceTree = "<group>"; };
-		3FE9B19F1C66A79900A46EE8 /* SSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSView.swift; sourceTree = "<group>"; };
 		3FE9B1A21C66AE7E00A46EE8 /* SKSplashIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSplashIcon.h; sourceTree = "<group>"; };
 		3FE9B1A31C66AE7E00A46EE8 /* SKSplashIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSplashIcon.m; sourceTree = "<group>"; };
 		3FE9B1A41C66AE7E00A46EE8 /* SKSplashView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSplashView.h; sourceTree = "<group>"; };
 		3FE9B1A51C66AE7E00A46EE8 /* SKSplashView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSplashView.m; sourceTree = "<group>"; };
+		3FE9B1A81C66B26400A46EE8 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		3FE9B1AA1C66C26D00A46EE8 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		3FE9B1B61C66DD7400A46EE8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8BD3A088445050DFF5302D73 /* Pods-Lexicon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lexicon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lexicon/Pods-Lexicon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,17 +114,19 @@
 				3FE9B1A11C66AE7E00A46EE8 /* SKSplashView */,
 				3FC0C1BC1C66526A004BD741 /* Paralax */,
 				3FD726851C663A2300AA4CB1 /* AppDelegate.swift */,
-				3FD726891C663A2300AA4CB1 /* SecondViewController.swift */,
 				3FE01D0E1C66581F0036CB08 /* ParH.xib */,
+				3FE9B1AA1C66C26D00A46EE8 /* HeaderView.swift */,
 				3FD7268B1C663A2300AA4CB1 /* Main.storyboard */,
+				3FE9B1B61C66DD7400A46EE8 /* DetailViewController.swift */,
+				3FE9B1A81C66B26400A46EE8 /* ProgressViewController.swift */,
 				3FC6D88F1C668BA300471456 /* HistoryViewController.swift */,
 				3FC6D88D1C6685E100471456 /* TabBarCustomViewController.swift */,
 				3FD726991C66465900AA4CB1 /* PlacesViewController.swift */,
 				3FD7269D1C66492500AA4CB1 /* PhraseTableViewCell.swift */,
 				3FD7268E1C663A2300AA4CB1 /* Assets.xcassets */,
 				3FD726901C663A2300AA4CB1 /* LaunchScreen.storyboard */,
-				3FE9B19F1C66A79900A46EE8 /* SSView.swift */,
 				3FD726931C663A2300AA4CB1 /* Info.plist */,
+				3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */,
 			);
 			path = Lexicon;
 			sourceTree = "<group>";
@@ -267,17 +273,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3FE9B1A01C66A79900A46EE8 /* SSView.swift in Sources */,
 				3FC0C1C01C66527A004BD741 /* ParallaxHeaderView.m in Sources */,
 				3FD7269A1C66465900AA4CB1 /* PlacesViewController.swift in Sources */,
+				3FE9B1A91C66B26400A46EE8 /* ProgressViewController.swift in Sources */,
 				3FC6D88E1C6685E100471456 /* TabBarCustomViewController.swift in Sources */,
 				3FE01D0D1C6654F70036CB08 /* UIImage+ImageEffects.m in Sources */,
+				3FE9B1B51C66CA6C00A46EE8 /* DateTableViewCell.swift in Sources */,
 				3FE9B1A61C66AE7E00A46EE8 /* SKSplashIcon.m in Sources */,
 				3FE9B1A71C66AE7E00A46EE8 /* SKSplashView.m in Sources */,
-				3FD7268A1C663A2300AA4CB1 /* SecondViewController.swift in Sources */,
 				3FD7269E1C66492500AA4CB1 /* PhraseTableViewCell.swift in Sources */,
 				3FD726861C663A2300AA4CB1 /* AppDelegate.swift in Sources */,
 				3FC6D8901C668BA300471456 /* HistoryViewController.swift in Sources */,
+				3FE9B1AB1C66C26D00A46EE8 /* HeaderView.swift in Sources */,
+				3FE9B1B71C66DD7400A46EE8 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

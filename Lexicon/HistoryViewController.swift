@@ -10,12 +10,23 @@ import UIKit
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    var history = [String: AnyObject]()
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        history = Data.sharedInstance.historyArray
+        
+        tableView.reloadData()
+        
+        
+        print(Data.sharedInstance.historyArray)
+        print(history)
 
         // Do any additional setup after loading the view.
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,14 +39,21 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        print(history.count)
+        return history.count
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("pheader")
+        let cell = tableView.dequeueReusableCellWithIdentifier("pheader") as! DateTableViewCell
         
-        cell?.frame = CGRectMake(0, 0, self.view.frame.width, 53)
+        cell.frame = CGRectMake(0, 0, self.view.frame.width, 53)
+        
+        let keys = [String](history.keys)
+        
+        print(keys)
+        
+        cell.dateLabel.text = keys[section]
         
         return cell
         
@@ -50,6 +68,16 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("phraseC", forIndexPath: indexPath) as! PhraseTableViewCell
+        
+        let keys = [String](history.keys)
+        
+        print("ДАННЫЕ")
+        print(history[keys[indexPath.section]])
+        
+        cell.targetLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Target"] as! String
+        cell.proLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Pronounce"] as! String
+        cell.transLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Translation"] as! String
+        
         
         return cell
     }

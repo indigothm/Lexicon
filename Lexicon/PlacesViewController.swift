@@ -10,6 +10,38 @@ import UIKit
 import Spring
 
 class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let dictionary = [
+        
+        [
+        
+        "Target": "Как пройти в библиотеку?",
+        "Pronounce": "kak proyti v biblioteku?",
+        "Translation": "How can I get to the library"
+        
+        ],[
+            
+        "Target": "Идите прямо, потом направо",
+        "Pronounce": "idite pryamo, potom napravo",
+        "Translation": "go straight, then turn right"
+        
+        ],[
+            
+        "Target": "Здание будет слева от вас",
+        "Pronounce": "zdanie budet sleva ot vas",
+        "Translation": "the building will be to the left of you"
+        
+        ],[
+        
+        "Target": "Мне нравится этот университет",
+        "Pronounce": "Mne nravitsya etot universitet",
+        "Translation": "I like this university"
+        
+        ]
+    
+    
+    
+    ]
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,6 +52,28 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             ).instantiateWithOwner(nil, options: nil)[0] as? UIView
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.view.translatesAutoresizingMaskIntoConstraints = true
+        
+        let head = loadFromNibNamed("ParH") as! HeaderView
+        head.placeLabel.text = "@UNIVERSITY"
+        head.targetPlace.text = "Университет"
+        head.prounPlace.text = "[universitet]"
+        head.imageView.image = UIImage(named: "UniversityCircle")
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        
+        head.frame = CGRectMake(0,0, screenWidth, 273)
+        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(head) as! ParallaxHeaderView
+        self.tableView.tableHeaderView = headerView
+        tableView.reloadData()
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,25 +81,26 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
         
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateFormat = "MMMM, dd"
+        
+        let dateString = formatter.stringFromDate(NSDate())
+        
+        Data.sharedInstance.historyArray[dateString] =  dictionary
+        
+        print(Data.sharedInstance.historyArray)
+        
         twitterAnimation ()
-        
-        let head = loadFromNibNamed("ParH")
-        head?.frame = CGRectMake(0,0, self.view.frame.width, 273)
-        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(head) as! ParallaxHeaderView
-        self.tableView.tableHeaderView = headerView
-        
     }
     
     func twitterAnimation () {
         
-        /*
-        let imageView = UIImage(frame: self.view.frame, named: "logo")
-        self.view.addSubview(imageView)
-        */
         let lexS = SKSplashIcon(image: UIImage(named: "logo"), animationType: SKIconAnimationType.Bounce)
         let color = UIColor(red:0.04, green:0.11, blue:0.16, alpha:1.0)
         let splashView = SKSplashView(splashIcon: lexS, backgroundColor: color, animationType: SKSplashAnimationType.None)
-        splashView.animationDuration = 0.7
+        splashView.animationDuration = 1.0
         self.view.addSubview(splashView)
         splashView.startAnimation()
         
@@ -83,12 +138,16 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dictionary.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("phraseC", forIndexPath: indexPath) as! PhraseTableViewCell
+        
+        cell.targetLabel.text = dictionary[indexPath.row]["Target"]
+        cell.proLabel.text = dictionary[indexPath.row]["Pronounce"]
+        cell.transLabel.text = dictionary[indexPath.row]["Translation"]
         
         return cell
     }
@@ -104,16 +163,46 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    
+    var target: String = ""
+    var pronoun: String = ""
+    var trans: String = ""
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+       
+        
+    
+       target = dictionary[indexPath.row]["Target"]! as String
+       pronoun = dictionary[indexPath.row]["Pronounce"]! as String
+       trans = dictionary[indexPath.row]["Translation"]! as String
 
-    /*
+
+        
+        performSegueWithIdentifier("open", sender: self)
+    }
+
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "open" {
+            
+            
+            print(target)
+            print(pronoun)
+            print(trans)
+            
+           Data.sharedInstance.Ctarget = target
+           Data.sharedInstance.Cpronoun = pronoun
+           Data.sharedInstance.Ctrans = trans
+        }
+        
     }
-    */
+    
 
 }
 

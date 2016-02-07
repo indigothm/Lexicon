@@ -1,5 +1,5 @@
 //
-//  SSView.swift
+//  HeaderView.swift
 //  Lexicon
 //
 //  Created by Ilia Tikhomirov on 06/02/16.
@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Spring
 
-class SSView: UIView {
+class HeaderView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
@@ -18,4 +19,10 @@ class SSView: UIView {
     }
     */
 
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var imageView: SpringImageView!
+    @IBOutlet weak var targetPlace: UILabel!
+    @IBOutlet weak var prounPlace: UILabel!
+    
+    
 }

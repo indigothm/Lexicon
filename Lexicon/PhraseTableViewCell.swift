@@ -25,6 +25,8 @@ class PhraseTableViewCell: UITableViewCell {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screenWidth = screenSize.width
         
+        targetLabel.adjustsFontSizeToFitWidth = true
+        
         self.frame = CGRectMake(0,0, screenWidth, 90)
 
         
