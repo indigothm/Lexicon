@@ -24,6 +24,7 @@
 		3FE9B1AB1C66C26D00A46EE8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1AA1C66C26D00A46EE8 /* HeaderView.swift */; };
 		3FE9B1B51C66CA6C00A46EE8 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */; };
 		3FE9B1B71C66DD7400A46EE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1B61C66DD7400A46EE8 /* DetailViewController.swift */; };
+		3FE9B1B91C66F49400A46EE8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9B1B81C66F49400A46EE8 /* Data.swift */; };
 		F35C009DB54B33F5B21C4C7A /* Pods_Lexicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DD05BAF777407A367B8452 /* Pods_Lexicon.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		3FE9B1AA1C66C26D00A46EE8 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		3FE9B1B61C66DD7400A46EE8 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3FE9B1B81C66F49400A46EE8 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		8BD3A088445050DFF5302D73 /* Pods-Lexicon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lexicon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lexicon/Pods-Lexicon.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 				3FD726901C663A2300AA4CB1 /* LaunchScreen.storyboard */,
 				3FD726931C663A2300AA4CB1 /* Info.plist */,
 				3FE9B1B41C66CA6C00A46EE8 /* DateTableViewCell.swift */,
+				3FE9B1B81C66F49400A46EE8 /* Data.swift */,
 			);
 			path = Lexicon;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				3FE01D0D1C6654F70036CB08 /* UIImage+ImageEffects.m in Sources */,
 				3FE9B1B51C66CA6C00A46EE8 /* DateTableViewCell.swift in Sources */,
 				3FE9B1A61C66AE7E00A46EE8 /* SKSplashIcon.m in Sources */,
+				3FE9B1B91C66F49400A46EE8 /* Data.swift in Sources */,
 				3FE9B1A71C66AE7E00A46EE8 /* SKSplashView.m in Sources */,
 				3FD7269E1C66492500AA4CB1 /* PhraseTableViewCell.swift in Sources */,
 				3FD726861C663A2300AA4CB1 /* AppDelegate.swift in Sources */,
