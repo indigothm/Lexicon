@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import Firebase
 
 class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -89,6 +90,8 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let dateString = formatter.stringFromDate(NSDate())
         
         Data.sharedInstance.historyArray[dateString] =  dictionary
+        
+        Data.sharedInstance.firebaseD.setValue(dictionary)
         
         print(Data.sharedInstance.historyArray)
         

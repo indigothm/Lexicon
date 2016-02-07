@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import Firebase
 
 class Data {
         
         static let sharedInstance = Data()
-        
+    
+        var firebaseD = Firebase(url:"https://learnlexicon.firebaseio.com")
+    
         var historyArray = [String: AnyObject]()
         
         var Ctarget: String = ""
