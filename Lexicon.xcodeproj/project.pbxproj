@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2A8F641C6A65F5002F6B76 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2A8F631C6A65F5002F6B76 /* Networking.swift */; };
+		3F2A8F661C6A6FC5002F6B76 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2A8F651C6A6FC4002F6B76 /* CoreLocation.framework */; };
 		3FC0C1C01C66527A004BD741 /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC0C1BF1C66527A004BD741 /* ParallaxHeaderView.m */; };
 		3FC6D88E1C6685E100471456 /* TabBarCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6D88D1C6685E100471456 /* TabBarCustomViewController.swift */; };
 		3FC6D8901C668BA300471456 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC6D88F1C668BA300471456 /* HistoryViewController.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		2698F2174AB4B607938B7435 /* Pods-Lexicon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lexicon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lexicon/Pods-Lexicon.release.xcconfig"; sourceTree = "<group>"; };
 		39DD05BAF777407A367B8452 /* Pods_Lexicon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lexicon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F2A8F631C6A65F5002F6B76 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		3F2A8F651C6A6FC4002F6B76 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3FC0C1BD1C665279004BD741 /* Lexicon-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lexicon-Bridging-Header.h"; sourceTree = "<group>"; };
 		3FC0C1BE1C66527A004BD741 /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
 		3FC0C1BF1C66527A004BD741 /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
@@ -64,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2A8F661C6A6FC5002F6B76 /* CoreLocation.framework in Frameworks */,
 				F35C009DB54B33F5B21C4C7A /* Pods_Lexicon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +129,7 @@
 				3FC6D88F1C668BA300471456 /* HistoryViewController.swift */,
 				3FC6D88D1C6685E100471456 /* TabBarCustomViewController.swift */,
 				3FD726991C66465900AA4CB1 /* PlacesViewController.swift */,
+				3F2A8F631C6A65F5002F6B76 /* Networking.swift */,
 				3FD7269D1C66492500AA4CB1 /* PhraseTableViewCell.swift */,
 				3FD7268E1C663A2300AA4CB1 /* Assets.xcassets */,
 				3FD726901C663A2300AA4CB1 /* LaunchScreen.storyboard */,
@@ -148,6 +154,7 @@
 		532FA5A03D357DA7EC2874A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3F2A8F651C6A6FC4002F6B76 /* CoreLocation.framework */,
 				39DD05BAF777407A367B8452 /* Pods_Lexicon.framework */,
 			);
 			name = Frameworks;
@@ -282,6 +289,7 @@
 				3FC6D88E1C6685E100471456 /* TabBarCustomViewController.swift in Sources */,
 				3FE01D0D1C6654F70036CB08 /* UIImage+ImageEffects.m in Sources */,
 				3FE9B1B51C66CA6C00A46EE8 /* DateTableViewCell.swift in Sources */,
+				3F2A8F641C6A65F5002F6B76 /* Networking.swift in Sources */,
 				3FE9B1A61C66AE7E00A46EE8 /* SKSplashIcon.m in Sources */,
 				3FE9B1B91C66F49400A46EE8 /* Data.swift in Sources */,
 				3FE9B1A71C66AE7E00A46EE8 /* SKSplashView.m in Sources */,

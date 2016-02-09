@@ -9,8 +9,9 @@
 import UIKit
 import Spring
 import Firebase
+import CoreLocation
 
-class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     let dictionary = [
         
@@ -57,6 +58,7 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.automaticallyAdjustsScrollViewInsets = false
         self.view.translatesAutoresizingMaskIntoConstraints = true
+
         
         let head = loadFromNibNamed("ParH") as! HeaderView
         head.placeLabel.text = "@UNIVERSITY"
@@ -75,13 +77,22 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+
         
         let formatter = NSDateFormatter()
         formatter.dateStyle = NSDateFormatterStyle.LongStyle
@@ -91,12 +102,26 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         Data.sharedInstance.historyArray[dateString] =  dictionary
         
-        Data.sharedInstance.firebaseD.setValue(dictionary)
+        Data.sharedInstance.firebaseD.setValue(Data.sharedInstance.historyArray)
         
         print(Data.sharedInstance.historyArray)
         
         twitterAnimation ()
     }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.first {
+            print("Current location: \(location)")
+            Networking.sharedInstance.getVenueTypeForLocation(location)
+        } else {
+            // ...
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error finding location: \(error.localizedDescription)")
+    }
+
     
     func twitterAnimation () {
         
