@@ -74,9 +74,9 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         print("ДАННЫЕ")
         print(history[keys[indexPath.section]])
         
-        cell.targetLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Target"] as! String
-        cell.proLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Pronounce"] as! String
-        cell.transLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Translation"] as! String
+        cell.targetLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Target"] as? String
+        cell.proLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Pronounce"] as? String
+        cell.transLabel.text = history[keys[indexPath.section]]?[indexPath.row]["Translation"] as? String
         
         
         return cell

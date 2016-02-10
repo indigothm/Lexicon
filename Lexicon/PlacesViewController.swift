@@ -10,8 +10,15 @@ import UIKit
 import Spring
 import Firebase
 import CoreLocation
+import SwiftSpinner
 
 class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var placeLabel: UILabel!
+    @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var prounLabel: UILabel!
+    
     
     let dictionary = [
         
@@ -54,44 +61,26 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             ).instantiateWithOwner(nil, options: nil)[0] as? UIView
     }
     
-    override func viewWillAppear(animated: Bool) {
-        
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.view.translatesAutoresizingMaskIntoConstraints = true
 
-        
-        let head = loadFromNibNamed("ParH") as! HeaderView
-        head.placeLabel.text = "@UNIVERSITY"
-        head.targetPlace.text = "Университет"
-        head.prounPlace.text = "[universitet]"
-        head.imageView.image = UIImage(named: "UniversityCircle")
-        
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        
-        head.frame = CGRectMake(0,0, screenWidth, 273)
-        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithSubView(head) as! ParallaxHeaderView
-        self.tableView.tableHeaderView = headerView
-        tableView.reloadData()
-        
-        
-    }
-    
-    
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        errorView.hidden = true
 
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.view.translatesAutoresizingMaskIntoConstraints = true
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
+
 
         
         let formatter = NSDateFormatter()
@@ -109,15 +98,44 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         twitterAnimation ()
     }
     
+    @IBOutlet weak var errorView: UIView!
+    
+    @IBAction func refreshIDidTouch(sender: AnyObject) {
+        
+        locationManager.requestLocation()
+        
+    }
+    
+
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
+        if let location = locations.last {
+            
             print("Current location: \(location)")
-            Networking.sharedInstance.getVenueTypeForLocation(location)
+            
+            SwiftSpinner.show("Checking your location...")
+            Networking.sharedInstance.getVenueTypeForLocation(location, completionHandler: {
+            value in
+                
+                if value == "Error" {
+                    
+                    self.tableView.hidden = true
+                    self.errorView.hidden = false
+                    
+                }
+                
+                print("Place!!!")
+                print(value)
+                self.placeLabel.text = value
+                SwiftSpinner.hide()
+                
+            })
         } else {
             // ...
         }
     }
     
+
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error finding location: \(error.localizedDescription)")
     }
@@ -138,10 +156,10 @@ class PlacesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     
     func  scrollViewDidScroll(scrollView: UIScrollView) {
-        let header: ParallaxHeaderView = self.tableView.tableHeaderView as! ParallaxHeaderView
-        header.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
-       
-        self.tableView.tableHeaderView = header
+     
+     //  let view = self.tableView.tableHeaderView as! HeaderView
+      // view.placeLabel.text = "IT WAS SCROLLED!"
+        
     }
 
     override func didReceiveMemoryWarning() {
